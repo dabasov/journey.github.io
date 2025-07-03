@@ -52,7 +52,7 @@ const travelMethods = {
     }
 };
 
-// Fixed 5 European destinations with budget-aware pricing  
+// Fixed 10 European destinations with budget-aware pricing  
 const destinations = [
     {
         name: "🏛️ ROME, ITALY",
@@ -62,9 +62,18 @@ const destinations = [
             date: "2024-03-15"
         },
         hotels: {
-            budget: { name: "Roma Hostel Central", price: 180 },
-            midrange: { name: "Historic Center Hotel", price: 450 },
-            luxury: { name: "Hotel de Russie", price: 1200 }
+            budget: [
+                { name: "Roma Hostel Central", price: 180 },
+                { name: "The RomeHello Hostel", price: 170 }
+            ],
+            midrange: [
+                { name: "Historic Center Hotel", price: 450 },
+                { name: "Hotel Artemide", price: 420 }
+            ],
+            luxury: [
+                { name: "Hotel de Russie", price: 1200 },
+                { name: "The St. Regis Rome", price: 1350 }
+            ]
         },
         activities: {
             budget: [
@@ -97,9 +106,18 @@ const destinations = [
             date: "2024-03-20"
         },
         hotels: {
-            budget: { name: "Paris Hostel Montmartre", price: 160 },
-            midrange: { name: "Hotel des Grands Boulevards", price: 400 },
-            luxury: { name: "The Ritz Paris", price: 1500 }
+            budget: [
+                { name: "Paris Hostel Montmartre", price: 160 },
+                { name: "MIJE Fourcy Hostel", price: 150 }
+            ],
+            midrange: [
+                { name: "Hotel des Grands Boulevards", price: 400 },
+                { name: "Hotel Malte Opera", price: 380 }
+            ],
+            luxury: [
+                { name: "The Ritz Paris", price: 1500 },
+                { name: "Four Seasons George V", price: 1600 }
+            ]
         },
         activities: {
             budget: [
@@ -132,9 +150,18 @@ const destinations = [
             date: "2024-03-25"
         },
         hotels: {
-            budget: { name: "Generator Barcelona", price: 140 },
-            midrange: { name: "Gothic Quarter Hotel", price: 350 },
-            luxury: { name: "Hotel Arts Barcelona", price: 900 }
+            budget: [
+                { name: "Generator Barcelona", price: 140 },
+                { name: "Sant Jordi Hostel Rock Palace", price: 130 }
+            ],
+            midrange: [
+                { name: "Gothic Quarter Hotel", price: 350 },
+                { name: "Hotel Barcelona Universal", price: 320 }
+            ],
+            luxury: [
+                { name: "Hotel Arts Barcelona", price: 900 },
+                { name: "W Barcelona", price: 950 }
+            ]
         },
         activities: {
             budget: [
@@ -167,9 +194,18 @@ const destinations = [
             date: "2024-03-30"
         },
         hotels: {
-            budget: { name: "ClinkNOORD Hostel", price: 120 },
-            midrange: { name: "Canal Ring Hotel", price: 300 },
-            luxury: { name: "Waldorf Astoria Amsterdam", price: 800 }
+            budget: [
+                { name: "ClinkNOORD Hostel", price: 120 },
+                { name: "Hostelle Amsterdam", price: 110 }
+            ],
+            midrange: [
+                { name: "Canal Ring Hotel", price: 300 },
+                { name: "Hotel V Nesplein", price: 280 }
+            ],
+            luxury: [
+                { name: "Waldorf Astoria Amsterdam", price: 800 },
+                { name: "InterContinental Amstel", price: 850 }
+            ]
         },
         activities: {
             budget: [
@@ -202,9 +238,15 @@ const destinations = [
             date: "2024-04-05"
         },
         hotels: {
-            budget: { name: "Youth Hostel Zurich", price: 200 },
-            midrange: { name: "Lake View Hotel", price: 500 },
-            luxury: { name: "Baur au Lac", price: 1400 }
+            budget: [
+                { name: "Youth Hostel Zurich", price: 200 }
+            ],
+            midrange: [
+                { name: "Lake View Hotel", price: 500 }
+            ],
+            luxury: [
+                { name: "Baur au Lac", price: 1400 }
+            ]
         },
         activities: {
             budget: [
@@ -228,6 +270,214 @@ const destinations = [
         },
         tripDuration: "3 days",
         weather: "Fresh, 12°C"
+    },
+    {
+        name: "🇩🇪 BERLIN, GERMANY",
+        baseTravel: {
+            baseDuration: 4,
+            basePrice: 250,
+            date: "2024-04-10"
+        },
+        hotels: {
+            budget: [
+                { name: "Meininger Hotel Berlin", price: 150 },
+                { name: "Heart of Gold Hostel", price: 140 }
+            ],
+            midrange: [
+                { name: "Hackescher Hof Hotel", price: 380 },
+                { name: "Hotel Gendarm nouveau", price: 360 }
+            ],
+            luxury: [
+                { name: "Hotel Adlon Kempinski", price: 1100 },
+                { name: "The Ritz-Carlton Berlin", price: 1250 }
+            ]
+        },
+        activities: {
+            budget: [
+                { name: "Brandenburg Gate (Free)", price: 0 },
+                { name: "East Side Gallery", price: 0 },
+                { name: "Free Walking Tour", price: 0 },
+                { name: "Currywurst Stand", price: 8 }
+            ],
+            midrange: [
+                { name: "Museum Island", price: 25 },
+                { name: "TV Tower", price: 35 },
+                { name: "Beer Garden", price: 30 },
+                { name: "Checkpoint Charlie", price: 15 }
+            ],
+            luxury: [
+                { name: "Private Berlin Tour", price: 180 },
+                { name: "Michelin Restaurant", price: 280 },
+                { name: "Luxury River Cruise", price: 150 },
+                { name: "Private Museum Tour", price: 200 }
+            ]
+        },
+        tripDuration: "4 days",
+        weather: "Cool, 15°C"
+    },
+    {
+        name: "🇦🇹 VIENNA, AUSTRIA",
+        baseTravel: {
+            baseDuration: 5,
+            basePrice: 300,
+            date: "2024-04-15"
+        },
+        hotels: {
+            budget: [
+                { name: "Wombats City Hostel", price: 160 }
+            ],
+            midrange: [
+                { name: "Hotel Am Konzerthaus", price: 420 }
+            ],
+            luxury: [
+                { name: "Hotel Sacher Wien", price: 1300 }
+            ]
+        },
+        activities: {
+            budget: [
+                { name: "Schönbrunn Palace (Gardens)", price: 0 },
+                { name: "St. Stephen's Cathedral", price: 0 },
+                { name: "Naschmarkt", price: 0 },
+                { name: "Viennese Coffee", price: 12 }
+            ],
+            midrange: [
+                { name: "Schönbrunn Palace Tour", price: 40 },
+                { name: "Vienna State Opera", price: 85 },
+                { name: "Danube River Cruise", price: 45 },
+                { name: "Traditional Restaurant", price: 50 }
+            ],
+            luxury: [
+                { name: "Private Palace Tour", price: 250 },
+                { name: "Opera Premium Seats", price: 300 },
+                { name: "Luxury Danube Cruise", price: 200 },
+                { name: "Michelin Star Dining", price: 320 }
+            ]
+        },
+        tripDuration: "4 days",
+        weather: "Mild, 17°C"
+    },
+    {
+        name: "🇨🇿 PRAGUE, CZECH REPUBLIC",
+        baseTravel: {
+            baseDuration: 3,
+            basePrice: 180,
+            date: "2024-04-20"
+        },
+        hotels: {
+            budget: [
+                { name: "Hostel One Home", price: 90 }
+            ],
+            midrange: [
+                { name: "Golden Well Hotel", price: 280 }
+            ],
+            luxury: [
+                { name: "Augustine Hotel", price: 750 }
+            ]
+        },
+        activities: {
+            budget: [
+                { name: "Charles Bridge Walk", price: 0 },
+                { name: "Old Town Square", price: 0 },
+                { name: "Prague Castle (Outside)", price: 0 },
+                { name: "Czech Beer", price: 6 }
+            ],
+            midrange: [
+                { name: "Prague Castle Tour", price: 25 },
+                { name: "Astronomical Clock", price: 15 },
+                { name: "River Cruise", price: 35 },
+                { name: "Traditional Czech Meal", price: 25 }
+            ],
+            luxury: [
+                { name: "Private Castle Tour", price: 180 },
+                { name: "Classical Concert", price: 120 },
+                { name: "Luxury Vltava Cruise", price: 150 },
+                { name: "Fine Dining Experience", price: 200 }
+            ]
+        },
+        tripDuration: "3 days",
+        weather: "Pleasant, 19°C"
+    },
+    {
+        name: "🇬🇧 LONDON, UK",
+        baseTravel: {
+            baseDuration: 6,
+            basePrice: 380,
+            date: "2024-04-25"
+        },
+        hotels: {
+            budget: [
+                { name: "Generator London", price: 180 }
+            ],
+            midrange: [
+                { name: "The Z Hotel Piccadilly", price: 420 }
+            ],
+            luxury: [
+                { name: "The Savoy", price: 1600 }
+            ]
+        },
+        activities: {
+            budget: [
+                { name: "British Museum (Free)", price: 0 },
+                { name: "Hyde Park Walk", price: 0 },
+                { name: "Changing of the Guard", price: 0 },
+                { name: "Fish & Chips", price: 15 }
+            ],
+            midrange: [
+                { name: "Tower of London", price: 45 },
+                { name: "London Eye", price: 35 },
+                { name: "Thames River Cruise", price: 40 },
+                { name: "West End Show", price: 80 }
+            ],
+            luxury: [
+                { name: "Private Tower Tour", price: 300 },
+                { name: "Luxury Thames Cruise", price: 200 },
+                { name: "Premium Theatre Box", price: 400 },
+                { name: "Michelin Star Dining", price: 350 }
+            ]
+        },
+        tripDuration: "5 days",
+        weather: "Cloudy, 14°C"
+    },
+    {
+        name: "🇬🇷 ATHENS, GREECE",
+        baseTravel: {
+            baseDuration: 4,
+            basePrice: 220,
+            date: "2024-04-30"
+        },
+        hotels: {
+            budget: [
+                { name: "Athens Backpackers", price: 100 }
+            ],
+            midrange: [
+                { name: "Electra Palace Athens", price: 320 }
+            ],
+            luxury: [
+                { name: "Hotel Grande Bretagne", price: 900 }
+            ]
+        },
+        activities: {
+            budget: [
+                { name: "Acropolis (Free Hours)", price: 0 },
+                { name: "National Gardens", price: 0 },
+                { name: "Plaka District Walk", price: 0 },
+                { name: "Souvlaki", price: 8 }
+            ],
+            midrange: [
+                { name: "Acropolis Museum", price: 30 },
+                { name: "Ancient Agora", price: 20 },
+                { name: "Greek Cooking Class", price: 65 },
+                { name: "Traditional Taverna", price: 35 }
+            ],
+            luxury: [
+                { name: "Private Acropolis Tour", price: 200 },
+                { name: "Luxury Aegean Cruise", price: 250 },
+                { name: "Exclusive Cooking Experience", price: 180 },
+                { name: "Rooftop Fine Dining", price: 220 }
+            ]
+        },
+        tripDuration: "4 days",
+        weather: "Warm, 22°C"
     }
 ];
 
@@ -259,9 +509,9 @@ function generateRandomTravel(baseTravel, budgetTier) {
 }
 
 // Function to calculate total trip cost based on budget tier
-function calculateTotalCost(destination, travel, budgetTier) {
+function calculateTotalCost(destination, travel, budgetTier, selectedHotel) {
     const travelCost = travel.price;
-    const hotelCost = destination.hotels[budgetTier].price;
+    const hotelCost = selectedHotel.price;
     const activitiesCost = destination.activities[budgetTier].reduce((sum, activity) => sum + activity.price, 0);
     return travelCost + hotelCost + activitiesCost;
 }
@@ -494,9 +744,14 @@ function showNextDestination() {
     setTimeout(() => {
         // Generate random travel for this destination
         const randomTravel = generateRandomTravel(destination.baseTravel, selectedBudgetTier);
-        const totalTripCost = calculateTotalCost(destination, randomTravel, selectedBudgetTier);
 
-        populateDestinationDetails(destination, randomTravel, totalTripCost);
+        // Select random hotel from available options for this budget tier
+        const hotelOptions = destination.hotels[selectedBudgetTier];
+        const selectedHotel = hotelOptions[Math.floor(Math.random() * hotelOptions.length)];
+
+        const totalTripCost = calculateTotalCost(destination, randomTravel, selectedBudgetTier, selectedHotel);
+
+        populateDestinationDetails(destination, randomTravel, totalTripCost, selectedHotel);
         showDestinationScreen();
 
         // Update stats
@@ -516,7 +771,7 @@ function showNextDestination() {
 }
 
 // Populate destination details
-function populateDestinationDetails(destination, travel, totalCost) {
+function populateDestinationDetails(destination, travel, totalCost, selectedHotel) {
     destinationNameEl.textContent = destination.name;
 
     // Travel details (randomized transport method)
@@ -526,12 +781,11 @@ function populateDestinationDetails(destination, travel, totalCost) {
     travelDurationEl.textContent = travel.duration;
     travelPriceEl.textContent = `$${travel.price}`;
 
-    // Hotel details (budget-aware)
-    const hotel = destination.hotels[selectedBudgetTier];
-    hotelNameEl.textContent = hotel.name;
+    // Hotel details (randomly selected from budget tier)
+    hotelNameEl.textContent = selectedHotel.name;
     checkInEl.textContent = formatDate(travel.date);
     checkOutEl.textContent = formatDate(getCheckoutDate(travel.date, destination.tripDuration));
-    hotelPriceEl.textContent = `$${hotel.price}`;
+    hotelPriceEl.textContent = `$${selectedHotel.price}`;
 
     // Activities (budget-aware)
     activitiesEl.innerHTML = '';
@@ -570,11 +824,9 @@ function populateHotelPreview() {
     // Clear existing hotels
     hotelGridEl.innerHTML = '';
 
-    // Create hotel cards for each destination
+    // Create hotel cards for each destination and all hotels in each budget tier
     destinations.forEach(destination => {
-        const hotel = destination.hotels[selectedBudgetTier];
-        const hotelCard = document.createElement('div');
-        hotelCard.className = 'hotel-card';
+        const hotels = destination.hotels[selectedBudgetTier];
 
         // Extract city name from destination name (remove emoji and country)
         const cityName = destination.name.split(' ')[1].replace(',', '');
@@ -593,14 +845,20 @@ function populateHotelPreview() {
                 break;
         }
 
-        hotelCard.innerHTML = `
-            <div class="hotel-location">${cityName}</div>
-            <div class="hotel-name">${hotel.name}</div>
-            <div class="hotel-tier">${tierDescription}</div>
-            <div class="hotel-price">$${hotel.price}/stay</div>
-        `;
+        // Create a card for each hotel in this destination
+        hotels.forEach(hotel => {
+            const hotelCard = document.createElement('div');
+            hotelCard.className = 'hotel-card';
 
-        hotelGridEl.appendChild(hotelCard);
+            hotelCard.innerHTML = `
+                <div class="hotel-location">${cityName}</div>
+                <div class="hotel-name">${hotel.name}</div>
+                <div class="hotel-tier">${tierDescription}</div>
+                <div class="hotel-price">$${hotel.price}/stay</div>
+            `;
+
+            hotelGridEl.appendChild(hotelCard);
+        });
     });
 }
 
