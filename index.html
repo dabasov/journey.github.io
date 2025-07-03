@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎮 Pixel Europe Adventure</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="game-container">
+        <header class="header">
+            <h1 class="title">🎮 PIXEL EUROPE</h1>
+            <div class="score">DESTINATIONS: <span id="destinationCount">0</span></div>
+        </header>
+
+        <!-- Budget Selection Screen -->
+        <div class="budget-screen" id="budgetScreen">
+            <div class="welcome-message">
+                <h2>🇪🇺 PIXEL EUROPE</h2>
+                <p>Make your journey unpredictable and exciting</p>
+            </div>
+
+            <div class="budget-options">
+                <button class="budget-option" id="budgetOption1" data-budget="budget">
+                    <div class="budget-icon">💰</div>
+                    <div class="budget-title">BUDGET TRAVELER</div>
+                    <div class="budget-amount">$3,000</div>
+                    <div class="budget-desc">Hostels, trains, free activities</div>
+                </button>
+
+                <button class="budget-option" id="budgetOption2" data-budget="midrange">
+                    <div class="budget-icon">🏨</div>
+                    <div class="budget-title">MID-RANGE EXPLORER</div>
+                    <div class="budget-amount">$6,000</div>
+                    <div class="budget-desc">Hotels, mixed transport, tours</div>
+                </button>
+
+                <button class="budget-option" id="budgetOption3" data-budget="luxury">
+                    <div class="budget-icon">✨</div>
+                    <div class="budget-title">LUXURY EXPERIENCE</div>
+                    <div class="budget-amount">$12,000</div>
+                    <div class="budget-desc">5-star hotels, flights, premium</div>
+                </button>
+            </div>
+        </div>
+
+        <!-- Hotel Preview Screen -->
+        <div class="hotel-preview-screen" id="hotelPreviewScreen" style="display: none;">
+            <div class="welcome-message">
+                <h2>🏨 APPROVED HOTELS</h2>
+                <p>Your <span id="hotelBudgetName"></span> accommodations across Europe</p>
+            </div>
+
+            <div class="hotel-grid" id="hotelGrid">
+                <!-- Hotels will be populated here -->
+            </div>
+
+            <div class="button-container">
+                <button class="pixel-button" id="startJourneyBtn">
+                    🚀 START JOURNEY
+                </button>
+            </div>
+        </div>
+
+        <main class="main-screen" id="mainScreen" style="display: none;">
+            <div class="welcome-message">
+                <h2>🇪🇺 EUROPEAN ADVENTURE!</h2>
+                <p>Journey through 5 amazing destinations</p>
+            </div>
+
+            <div class="journey-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="progress-text">
+                    <span id="currentDestination">1</span> of 5 destinations
+                </div>
+            </div>
+
+            <div class="button-container">
+                <button class="pixel-button next-destination-btn" id="nextDestinationBtn">
+                    📍 START JOURNEY
+                </button>
+            </div>
+
+            <div class="travel-stats">
+                <div class="stat-item">
+                    <span class="stat-label">BUDGET:</span>
+                    <span class="stat-value" id="selectedBudget">$0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">SPENT:</span>
+                    <span class="stat-value" id="totalCost">$0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">REMAINING:</span>
+                    <span class="stat-value" id="remainingBudget">$0</span>
+                </div>
+            </div>
+        </main>
+
+        <div class="destination-screen" id="destinationScreen" style="display: none;">
+            <div class="destination-header">
+                <h2 id="destinationName">🏝️ DESTINATION</h2>
+                <button class="pixel-button back-btn" id="backBtn">⬅️ BACK</button>
+            </div>
+
+            <div class="destination-details">
+                <div class="detail-section">
+                    <h3>🚗 TRAVEL DETAILS</h3>
+                    <div class="detail-card">
+                        <p><strong>Transport:</strong> <span id="travelType"></span></p>
+                        <p><strong>Number:</strong> <span id="travelNumber"></span></p>
+                        <p><strong>Date:</strong> <span id="travelDate"></span></p>
+                        <p><strong>Duration:</strong> <span id="travelDuration"></span></p>
+                        <p><strong>Price:</strong> <span id="travelPrice"></span></p>
+                    </div>
+                </div>
+
+                <div class="detail-section">
+                    <h3>🏨 HOTEL BOOKING</h3>
+                    <div class="detail-card">
+                        <p><strong>Hotel:</strong> <span id="hotelName"></span></p>
+                        <p><strong>Check-in:</strong> <span id="checkIn"></span></p>
+                        <p><strong>Check-out:</strong> <span id="checkOut"></span></p>
+                        <p><strong>Price:</strong> <span id="hotelPrice"></span></p>
+                    </div>
+                </div>
+
+                <div class="detail-section">
+                    <h3>🎒 ACTIVITIES</h3>
+                    <div class="detail-card">
+                        <div id="activities"></div>
+                    </div>
+                </div>
+
+                <div class="detail-section">
+                    <h3>📋 TRAVEL SUMMARY</h3>
+                    <div class="detail-card">
+                        <p><strong>Total Cost:</strong> <span id="totalTripCost"></span></p>
+                        <p><strong>Duration:</strong> <span id="tripDuration"></span></p>
+                        <p><strong>Weather:</strong> <span id="weather"></span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="button-container">
+                <button class="pixel-button next-destination-btn" id="nextDestinationBtn2">
+                    🎯 NEXT DESTINATION
+                </button>
+            </div>
+        </div>
+
+        <!-- End Screen -->
+        <div class="end-screen" id="endScreen" style="display: none;">
+            <div class="end-header">
+                <h2>🎉 JOURNEY COMPLETE!</h2>
+                <p>You've explored all 5 European destinations!</p>
+            </div>
+
+            <div class="journey-summary">
+                <div class="summary-card">
+                    <h3>📊 YOUR ADVENTURE STATS</h3>
+                    <div class="stat-row">
+                        <span>Budget Selected:</span>
+                        <span id="finalBudget">$0</span>
+                    </div>
+                    <div class="stat-row">
+                        <span>Total Spent:</span>
+                        <span id="finalSpent">$0</span>
+                    </div>
+                    <div class="stat-row">
+                        <span>Money Saved:</span>
+                        <span id="finalSaved">$0</span>
+                    </div>
+                    <div class="stat-row">
+                        <span>Destinations Visited:</span>
+                        <span>5/5</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rating-section">
+                <h3>⭐ RATE YOUR EXPERIENCE</h3>
+                <p>How was your European adventure?</p>
+                <div class="star-rating" id="starRating">
+                    <button class="star" data-rating="1">⭐</button>
+                    <button class="star" data-rating="2">⭐</button>
+                    <button class="star" data-rating="3">⭐</button>
+                    <button class="star" data-rating="4">⭐</button>
+                    <button class="star" data-rating="5">⭐</button>
+                </div>
+                <div class="rating-text" id="ratingText"></div>
+            </div>
+
+            <div class="button-container">
+                <button class="pixel-button" id="newJourneyBtn">
+                    🔄 START NEW JOURNEY
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
